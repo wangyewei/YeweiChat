@@ -1,0 +1,108 @@
+// 页面开头公共样式
+.content {
+	padding-top: var(--status-bar-height);
+	}
+
+
+// 头部公共样式
+.top-bar {
+			height: 88rpx;
+			position: fixed;
+			left: 0;
+			top: 0;
+			width: 100%;			
+			display: flex;
+			align-items: center;
+			z-index: 999;
+			padding-top: var(--status-bar-height);
+
+			
+			.top-bar-left {
+				margin-left: 32rpx;
+				justify-content: left;
+				flex: 1;
+							
+				image {
+					width: 68rpx;
+					height: 68rpx;
+					border-radius: 16rpx;
+				}
+								
+				.back-img {
+					left: 0;
+					width: 88rpx;
+					height : 88rpx;
+					
+					image {
+						width: 26rpx;
+						height: 45rpx;
+						margin-top: 22rpx;
+					}
+				}
+
+			}
+			.top-bar-center {
+				
+				.logo {
+					font-weight: bold;
+					color: grey;
+				}
+			}
+			
+			.top-bar-right {
+				margin-right: 32rpx;
+				flex: 1;
+				text-align: right;
+				justify-content: right;
+				
+				image {
+					width: 52rpx;
+					height: 52rpx;
+					margin-left: 52rpx;
+				}
+				
+				.text {
+					font-size: $uni-font-size-lg;
+					font-weight: 500;
+					color: $uni-text-color;
+				}
+				
+				.more-img {
+					padding-right: $uni-spacing-col-base;
+					position: relative;
+					
+					image {
+						width: 52rpx;
+						height: 12rpx;
+						top: 0;
+						right: 0;
+						position: absolute;
+					}
+				}
+			}
+		}
+		
+		// 底部样式
+		.bottom-bar {
+			position: fixed;
+			bottom: 0;
+			height: 90rpx;
+			width: 100%;
+			// padding: 12rpx $uni-spacing-col-base;
+			padding-top: 10rpx;
+			padding-bottom: var(--status-bar-height);
+				
+		}
+		
+		// 按钮公共样式1
+		.btn1 {
+			margin: 0 $uni-spacing-col-base;
+			line-height: 80rpx;			
+			height: 80rpx;
+			border-radius: $uni-border-radius-sm;
+			font-size: 32rpx;
+			color: $uni-text-color;
+			text-align: center;
+		}
+		
+		
