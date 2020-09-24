@@ -10,7 +10,7 @@
 		</view>
 		<view class="mian">
 			<view class="title">登陆</view>
-			<view class="tag">您好，欢迎来到野未Chat</view>
+			<view class="tag" @tap="testFun2()">您好，欢迎来到野未Chat</view>
 			
 			<view class="form-login">
 				<input type="text" 
@@ -24,7 +24,7 @@
 				<view class="tips">{{ tips }}</view>
 				<view class="tips">{{ tipsUser }}</view>
 				<view class="tips">{{ tipsPsw }}</view>
-			<view class="submit" @tap="login()">登陆</view>
+			<view class="submit" @tap="testFun1()">登陆</view>
 			</view>
 		</view>
 	</view>
@@ -38,7 +38,8 @@
 				psw: '',
 				tips: '',
 				tipsUser: '',
-				tipsPsw: ''
+				tipsPsw: '',
+				token:''
 			}
 		},
 		methods: {
@@ -69,13 +70,49 @@
 			},
 			// 登陆提交
 			login() {
-				if(this.user && this.psw) {
-					console.log('提交')
-					// this.tips = ''
-				}else {
-					// this.tips = '用户名或密码错误！'
-				}
-			}
+				uni.request({
+					url:'http://192.168.146.1:3000/signup/add',
+					data: {
+						// mail: this.user
+						mail:'pengyunjin@163.com',
+						name:'彭韵瑾',
+						pwd: 'admain'
+					},
+					method:'POST',
+					success: (data) => {
+						console.log(data)
+					}
+				})
+			},
+			// 登陆页面后台调试
+			 testFun1() {
+				 uni.request({
+				 	url:'http://192.168.146.1:3000/user/update',
+					data: {
+						id:'5f6a41dac645080b7c98b8c0',
+						data:'pengyunjin@163.com',
+						type:'email',
+						pwd: 'admain'
+					},
+					method:'POST',
+					success: (data) => {
+						// this.token = data.data.back.token
+						console.log(data)
+					}
+				 })
+			 },
+			 testFun2(){
+				 uni.request({
+				 	url:'http://192.168.146.1:3000/search/user',
+					data: {
+						data:'彭韵瑾'
+					},
+					method:'POST',
+					success: (data) => {
+						console.log(data)
+					}
+				 })
+			 }
 		}
 	}
 </script>

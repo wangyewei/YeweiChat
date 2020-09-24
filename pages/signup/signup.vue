@@ -127,8 +127,8 @@
 			},
 			// 返回登陆页面
 			toLogin() {
-				uni.navigateBack({
-					delta: 1
+				uni.navigateTo({
+					url: '../login/login'
 				})
 			},
 			
